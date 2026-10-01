@@ -3,17 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Confirmar saída | ParkFlow</title>
+        <title>Confirmar saída</title>
         <link rel="stylesheet" href="/style.css">
-        <link rel="icon" type="image/png" href="/favicon.png">
+
     </head>
     <body>
         <main class="page">
             <section class="card wide">
-                <div class="brand"><span class="brand-mark">P</span> ParkFlow</div>
                 <div class="warning-icon">!</div>
-                <h2>Confirmar saída do veículo</h2>
-                <p class="subtitle center">Confira os dados abaixo antes de confirmar que o veículo deixou o estacionamento.</p>
+                <h2>Registros</h2>
+                <p class="subtitle center">Registros de veículo.</p>
                 <div class="vehicle-details">
                     <div class="detail"><span>Placa</span><strong th:text="${veiculo.placa}">ABC-1234</strong></div>
                     <div class="detail"><span>Modelo</span><strong th:text="${veiculo.modelo}">Modelo</strong></div>

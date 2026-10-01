@@ -3,16 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registro do veículo | ParkFlow</title>
+        <title>Registro do veículo</title>
         <link rel="stylesheet" href="/style.css">
-        <link rel="icon" type="image/png" href="/favicon.png">
+
     </head>
     <body>
         <main class="page">
             <section class="card wide">
-                <div class="brand"><span class="brand-mark">P</span> ParkFlow</div>
                 <h1>Registro do veículo</h1>
-                <p class="subtitle">Todas as informações cadastradas para este veículo no estacionamento.</p>
+                <p class="subtitle">Digite as informações do veículo.</p>
                 <div class="vehicle-details">
                     <div class="detail"><span>ID do registro</span><strong th:text="${veiculo.id}">1</strong></div>
                     <div class="detail"><span>Placa</span><strong th:text="${veiculo.placa}">ABC-1234</strong></div>
