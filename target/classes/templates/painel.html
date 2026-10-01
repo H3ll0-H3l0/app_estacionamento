@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Painel</title>
+        <link rel="stylesheet" href="/style.css">
+
+
+        <style>
+            .vehicle-list {
+                margin-top: 18px;
+                overflow-x: auto;
+            }
+            .vehicle-table {
+                width: 100%;
+                border-collapse: collapse;
+                min-width: 620px;
+
+            }
+            .vehicle-table th,.vehicle-table td {
+                padding: 15px 10px;
+                border-bottom: 3px solid black;
+                text-align: left;
+                font-size: 10px;
+            }
+            .vehicle-table th {
+                color: #ffffff;
+                background-color: #4a828a;
+                border-radius:15px;
+
+            }
+            .vehicle-table td {
+                color: var(--muted);
+            }
+            .empty {
+                margin: 20px 0 0;
+                color: var(--muted);
+            }
+        </style>
+    </head>
+    <body>
+        <main class="dashboard">
+            <section class="hero">
+                <p class="subtitle">Gerencie as entradas.</p>
+                <div class="hero-actions"><a class="button" href="/veiculo/cadastrar">Registrar veículo</a>
+                    <a class="button danger" href="/veiculo/registrar-saida">Remover veículo</a></div>
+            </section>
+            <section class="dashboard-grid">
+                <article class="panel">
+                    <h3>Registrar entrada</h3>
+                    <p>Cadastre placa, modelo, cor e obs do veículo que chegou.</p>
+                    <a class="button" href="/veiculo/cadastrar">Registrar veículo</a>
+                </article>
+                <article class="panel">
+                    <h3>Registrar saída</h3>
+                    <p>Selecione um veículo registrado para sair.</p>
+                    <a class="button secondary" href="/veiculo/registrar-saida">Registrar saída</a>
+                </article>
+            </section>
+
+            <section class="panel" style="margin-top:18px">
+                <h3>Veículos registrados</h3>
+                <p>Lista das entradas.</p>
+                <div class="vehicle-list" th:if="${veiculos != null and !veiculos.isEmpty()}">
+                    <table class="vehicle-table">
+                        <thead>
+                            <tr>
+                                <th>Placa</th>
+                                <th>Modelo</th>
+                                <th>Cor</th>
+                                <th>Observações</th>
+                                <th>Entrada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="v : ${veiculos}">
+                                <td th:text="${v.placa}"></td>
+                                <td th:text="${v.modelo}"></td>
+                                <td th:text="${v.cor}"></td>
+                                <td th:text="${v.observacoes}"></td>
+                                <td th:text="${#temporals.format(v.horaEntrada, 'dd/MM/yyyy HH:mm')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="empty" th:if="${veiculos == null or veiculos.isEmpty()}">Nenhum veículo registrado ainda.</p>
+            </section>
+        </main>
+    </body>
+</html>

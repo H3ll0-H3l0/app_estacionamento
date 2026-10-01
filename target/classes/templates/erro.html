@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Acesso negado</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <main class="page">
+            <section class="card center">
+                <div class="error-icon">!</div>
+                <h2 th:text="${mensagem != null ? mensagem : 'Algo está errado'}">Algo está errado</h2>
+                <p class="subtitle">Por favor, rever informações.</p>
+                <div class="actions"><a class="button" href="/">Tentar novamente</a><a class="button secondary" href="/cadastro">Criar uma conta</a></div>
+            </section>
+        </main>
+    </body>
+</html>
