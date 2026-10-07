@@ -14,6 +14,7 @@ FROM eclipse-temurin:25-jre
 
 WORKDIR /app
 
+
 # O Maven gera o ficheiro .jar dentro da pasta /target (em vez de /build/libs)
 COPY --from=build /app/target/*.jar app.jar
 
