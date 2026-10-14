@@ -79,8 +79,7 @@
                                 <td th:text="${v.modelo}"></td>
                                 <td th:text="${v.cor}"></td>
                                 <td th:text="${v.observacoes}"></td>
-                                <td th:text="${#temporals.format(v.horaEntrada, 'dd/MM/yyyy HH:mm')}"></td>
-                            </tr>
+                                <td th:text="${#temporals.format(veiculo.horaEntrada, 'HH:mm')}"></td>                            </tr>
                         </tbody>
                     </table>
                 </div>
