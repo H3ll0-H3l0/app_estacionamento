@@ -79,14 +79,13 @@
                                 <td th:text="${v.modelo}"></td>
                                 <td th:text="${v.cor}"></td>
                                 <td th:text="${v.observacoes}"></td>
-                                <td th:text="${#temporals.format(veiculo.horaEntrada, 'HH:mm')}"></td>                            </tr>
+                                <td th:text="${#temporals.format(v.horaEntrada, 'dd/MM/yyyy HH:mm')}"></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <p class="empty" th:if="${veiculos == null or veiculos.isEmpty()}">Nenhum veículo registrado ainda.</p>
             </section>
-            <br>
-            <a class="button" href="./login.html">Sair</a>
         </main>
     </body>
 </html>
