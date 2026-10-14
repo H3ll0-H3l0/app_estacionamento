@@ -21,13 +21,6 @@ public class LoginController {
     }
 
 
-
-    @GetMapping("/painel")
-    public String sair() {
-        return "login";
-    }
-
-
     @GetMapping("/")
     public String index() {
         return "login";
