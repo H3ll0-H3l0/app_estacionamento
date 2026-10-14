@@ -22,10 +22,11 @@ public class LoginController {
 
 
 
-    @GetMapping("/login")
-    public String saida() {
+    @GetMapping("/painel")
+    public String sair() {
         return "login";
     }
+
 
     @GetMapping("/")
     public String index() {
