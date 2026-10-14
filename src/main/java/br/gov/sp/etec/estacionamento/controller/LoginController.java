@@ -20,6 +20,13 @@ public class LoginController {
         veiculoService = v;
     }
 
+
+
+    @GetMapping("/login")
+    public String saida() {
+        return "login";
+    }
+
     @GetMapping("/")
     public String index() {
         return "login";
@@ -72,4 +79,6 @@ public class LoginController {
         m.addAttribute("veiculos", veiculoService.listarVeiculos());
         return "painel";
     }
+
 }
+
